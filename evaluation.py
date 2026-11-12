@@ -49,7 +49,7 @@ def run_benchmark(config_name: str, chunk_size: int, chunk_overlap: int, k_retri
     except Exception:
         pass
 
-    embeddings = GoogleGenerativeAIEmbeddings(model="models/text-embedding-001")
+    embeddings = GoogleGenerativeAIEmbeddings(model="models/gemini-embedding-001")
     vectorstore = Chroma.from_documents(
         documents=chunks,
         embedding=embeddings,
