@@ -86,6 +86,9 @@ def run_benchmark(config_name: str, chunk_size: int, chunk_overlap: int, k_retri
         print(f"[{status}] ({latency:.2f}s) Q: {q}")
         print(f"       Answer: {answer.strip()}")
 
+        # Waiting to respect quota time 
+        time.sleep(13)
+
     accuracy = (hits / len(EVALUATION_DATASET)) * 100
     print(f"\n--> {config_name} Retrieval Accuracy: {accuracy:.1f}% ({hits}/{len(EVALUATION_DATASET)})")
     return accuracy
