@@ -1,0 +1,17 @@
+services:
+  chromadb:
+    image: chromadb/chroma:0.5.20
+    ports:
+      - "8000:8000"
+    volumes:
+      - chroma_data:/chroma/chroma
+
+  rag-app:
+    build: .
+    env_file:
+      - .env
+    depends_on:
+      - chromadb
+
+volumes:
+  chroma_data:

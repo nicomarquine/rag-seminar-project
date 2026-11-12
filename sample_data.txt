@@ -1,0 +1,5 @@
+The QuantumCloud Architecture is a distributed serverless framework designed for low-latency edge computing.
+It utilizes lightweight V8 engine isolates instead of traditional Docker containers, reducing cold start times to under 5ms.
+The platform uses a proprietary consensus protocol called ChronoSync for cross-region data replication.
+Security is enforced using Zero-Trust policies and automated mTLS encryption across all edge nodes.
+In terms of pricing, QuantumCloud charges $0.000002 per execution unit and $0.15 per GB of outbound bandwidth.
