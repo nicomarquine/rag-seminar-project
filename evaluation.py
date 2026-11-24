@@ -58,7 +58,7 @@ def run_benchmark(config_name: str, chunk_size: int, chunk_overlap: int, k_retri
     )
     retriever = vectorstore.as_retriever(search_kwargs={"k": k_retrieved})
 
-    # 3. CConfiguration of LLM and Prompt
+    # 3. Configuration of LLM and Prompt
     llm = ChatGoogleGenerativeAI(model="gemini-2.5-flash", temperature=0.1)
     prompt = ChatPromptTemplate.from_messages([
         ("system", "Answer ONLY using the provided context:\n\n{context}"),
@@ -66,7 +66,7 @@ def run_benchmark(config_name: str, chunk_size: int, chunk_overlap: int, k_retri
     ])
     chain = prompt | llm | StrOutputParser()
 
-    # 4. Evauate questions
+    # 4. Evaluate questions
     hits = 0
     for item in EVALUATION_DATASET:
         q = item["question"]
